@@ -1,5 +1,5 @@
 function init() {
-	console.log('Init Game');
+	//console.log('Init Game');
 	turn = 1;
 	currPlayer = 1;
 	explodequeue = [];
