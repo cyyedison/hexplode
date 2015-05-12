@@ -86,7 +86,6 @@ io.on('connection', function(socket) {
 		}
 	} );
 	socket.on('updateInfo', function(turn) {
-		alert("HI");
 		console.log(turn);
 		var fs = require("fs");
 		var content = fs.readFileSync("/db/rank.txt");
