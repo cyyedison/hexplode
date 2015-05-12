@@ -98,16 +98,17 @@ io.on('connection', function(socket) {
 		var splitted3;
 		var splitted4;
 		var record;
-		/*for (var u=0; u < splitted.length ;u++){
+		for (var u=0; u < splitted.length ;u++){
 			//console.log("Splitted[" +u+"]: "+splitted[u]);
 			splitted[u] = splitted[u].replace('[','');
 			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
-			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii
+			console.log("Contents: " + splitted[u]);
+			/*splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii
 			for (var j=0;j<splitted2.length;j++){
 				splitted3[j] = String.fromCharCode(splitted2[j]);
 				console.log("record["+(u+1)+"]: "+splitted3);
-			}
-		}*/
+			}*/
+		}
 		//socket.emit('updated', content);	
 		
 
