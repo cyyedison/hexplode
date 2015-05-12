@@ -165,7 +165,8 @@ function add(id){
 		}
 		else if(player==1){
 				document.getElementById("win").play();
-				alert('You win!');				
+				alert('You win!');	
+				window.location = "/views/updaterank.php";			
 			}
 			else{
 				document.getElementById("lose").play();
