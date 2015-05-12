@@ -89,9 +89,12 @@ io.on('connection', function(socket) {
 		console.log(turn);
 		var fs = require("fs");
 		var content = fs.readFileSync("./public/db/rank.txt");	
+		var splitted = content.split("\n");
 		//socket.emit('updated', content);	
 		console.log("Contents: " + content);
-		console.log("Contents: " + typeof (content));
+		console.log("Splitted: " + splitted[0]);
+		console.log("Splitted: " + splitted[1]);
+		console.log("Splitted: " + splitted[2]);
 	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
 		console.log('New user retrieve init information');
