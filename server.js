@@ -140,9 +140,12 @@ io.on('connection', function(socket) {
 			else break;
 		}
 		if (d+1<=9){
+			console.log("You are in ranking!");
 			record[d+1][1]=turn;
 			socket.emit('requestName', {});
 			socket.on('gotName', function(name) {
+				console.log("gotName");
+				console.log(name);
 				record[d+1][0]=name;
 			});
 		}
