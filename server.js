@@ -85,6 +85,13 @@ io.on('connection', function(socket) {
 			io.to(socket.id).emit('getInitInfo', {'playerId' : playerId});
 		}
 	} );
+	socket.on('updateInfo', function(turn) {
+		alert("HI");
+		console.log(turn);
+		var fs = require("fs");
+		var content = fs.readFileSync("/db/rank.txt");
+		console.log("Contents: " + content);
+	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
 		console.log('New user retrieve init information');
 		io.to(newUser['id']).emit('getInitInfo', {'NoOfPlayer' : newUser['NoOfPlayer'], 'mapSize' : newUser['mapSize'], 'playerId' : newUser['playerId']});
