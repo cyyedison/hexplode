@@ -172,7 +172,7 @@ function add(id){
 				document.getElementById("lose").play();
 				alert('You lose!');				
 			}
-		window.location = "/menu";
+		//window.location = "/menu";
 	}
 	else if(exploded)
 		document.getElementById("explosion").play();
