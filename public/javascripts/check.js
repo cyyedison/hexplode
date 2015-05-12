@@ -166,13 +166,12 @@ function add(id){
 		else if(player==1){
 				document.getElementById("win").play();
 				alert('You win!');	
-				window.location = "../updaterank.php";
 			}
 			else{
 				document.getElementById("lose").play();
 				alert('You lose!');				
 			}
-		//window.location = "/menu";
+		window.location = "/menu";
 	}
 	else if(exploded)
 		document.getElementById("explosion").play();
