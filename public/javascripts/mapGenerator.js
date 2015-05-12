@@ -1,7 +1,7 @@
 var mapSize;
 var maxPlayerNum = localStorage.getItem('NoOfPlayer');
 if (maxPlayerNum>=2)
-	document.getElementById("multiInstruction").innerHTML='Share the URL to other players to join room!';
+	document.getElementById("footer").innerHTML='Share the URL to other players to join room!';
 
 function hexDivCreate(map, row, col, rowSize, colSize) {
 	var limit = 6;
