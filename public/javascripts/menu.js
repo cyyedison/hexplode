@@ -58,7 +58,7 @@ function restoreMenu(){
 	mapMenu.innerHTML='';
 	
 	var mode = document.getElementById("mode");
-	mode.innerHTML='<div id="1" onClick="chooseMapSize(id)" class="myButton">Single Player</div><br><br><div id="2" onClick="chooseMapSize(id)" class="myButton">Multiplayer</div><br><br><a href="/help" class="myButton">Help</a>';
+	mode.innerHTML='<div id="1" onClick="chooseMapSize(id)" class="myButton">Single Player</div><br><br><div id="2" onClick="chooseMapSize(id)" class="myButton">Multiplayer</div><br><br><a href="/rank" class="myButton">Leaderboard</a><br><br><a href="/help" class="myButton">Help</a>';
 	
 	
 }
