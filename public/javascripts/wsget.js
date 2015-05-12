@@ -49,7 +49,8 @@ socket.on('retrieveInitInfo', function(newUser) {
 socket.on('updated', function(content) {
 	console.log("HI");
 	console.log(content);
-	console.log(arrayBuffer2String(content));
+	var string = new TextDecoder(encoding).decode(content);
+	console.log(string);
 } );
 
 joinGame();
