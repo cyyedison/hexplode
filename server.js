@@ -73,12 +73,7 @@ io.on('connection', function(socket) {
 	socket.on('hexagonClicked', function(hexId) {
 		io.to(playerAtRoom[socket.id]).emit('hexagonClicked', hexId);
 	} );
-	socket.on('updateInfo', function(turn) {
-		console.log(turn);
-		var fs = require("fs");
-		var content = fs.readFileSync("/db/rank.txt");
-		console.log("Contents: " + content);
-	} );
+	
 	socket.on( 'getInitInfo', function(newUser) {
 		var playerId = roomWithPlayer[playerAtRoom[socket.id]].length;
 		newUser['id'] = socket.id;
@@ -95,3 +90,9 @@ io.on('connection', function(socket) {
 		io.to(newUser['id']).emit('getInitInfo', {'NoOfPlayer' : newUser['NoOfPlayer'], 'mapSize' : newUser['mapSize'], 'playerId' : newUser['playerId']});
 	} );
 } );
+socket.on('updateInfo', function(turn) {
+		console.log(turn);
+		var fs = require("fs");
+		var content = fs.readFileSync("/db/rank.txt");
+		console.log("Contents: " + content);
+	} );
