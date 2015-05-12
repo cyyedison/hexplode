@@ -95,7 +95,7 @@ io.on('connection', function(socket) {
 		var splitted = content2.split(",10,");//splitted is array of all record, e.g. alice, 100, in ascii
 		console.log("Contents: " + content2);
 		var splitted2;
-		var record;
+		var record=[];
 		var string;
 		for (var u=0; u < splitted.length ;u++){
 			splitted[u] = splitted[u].replace('[','');
