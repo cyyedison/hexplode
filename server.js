@@ -111,7 +111,7 @@ io.on('connection', function(socket) {
 
 	} );
 	socket.on('updateRank', function(turn) {
-		console.log("updateRank");
+		//console.log("updateRank");
 		//console.log(turn);
 		var fs = require("fs");
 		var content = fs.readFileSync(__dirname + '/public/db/rank.txt');	
@@ -141,12 +141,12 @@ io.on('connection', function(socket) {
 			else break;
 		}
 		if (d+1<=9){
-			console.log("You are in ranking!");
+			//console.log("You are in ranking!");
 			record[d+1][1]=turn;
 			socket.emit('requestName', {});
 			socket.on('gotName', function(name) {
 				record[d+1][0]=name;
-				console.log("record: "+record);
+				//console.log("record: "+record);
 				fs.writeFile(__dirname + '/public/db/rank.txt', record[0]+'\n'+record[1]+'\n'+record[2]+'\n'+record[3]+'\n'+record[4]+'\n'+record[5]+'\n'+record[6]+'\n'+record[7]+'\n'+record[8]+'\n'+record[9], function (err) {
   					if (err) throw err;
   					console.log('It\'s saved!');

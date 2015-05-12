@@ -18,7 +18,7 @@ function getRank(){
 }
 
 socket.on('requestName', function() {
-	console.log("gettingName");
+	//console.log("gettingName");
 	var name = prompt("Please enter your name", "");
 	while (name==null)
 		name = prompt("Please enter your name", "");
