@@ -24,3 +24,7 @@ function update(turn){
 	socket.emit('updateInfo', turn);
 	console.log("updating");
 }
+
+function getRank(){
+	socket.emit('getRank', {});
+}

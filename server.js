@@ -27,7 +27,7 @@ app.get( '/play', function ( req, res ) {
 } );
 
 app.get( '/rank', function ( req, res ) {
-	res.sendFile(__dirname + '/views/updaterank.php');
+	res.sendFile(__dirname + '/views/ranking.html');
 } );
 
 app.get('/play/:id([0-9]+)', function (req, res) {
@@ -87,13 +87,13 @@ io.on('connection', function(socket) {
 			}
 		}
 	} );
-	socket.on('updateInfo', function(turn) {
-		console.log(turn);
+	socket.on('getRank', function() {
+		//console.log(turn);
 		var fs = require("fs");
 		var content = fs.readFileSync(__dirname + '/public/db/rank.txt');	
 		var content2 = JSON.stringify(content);
 		var splitted = content2.split(",10,");//splitted is array of all record, e.g. alice, 100, in ascii
-		console.log("Contents: " + content2);
+		//console.log("Contents: " + content2);
 		var splitted2;
 		var record=[];
 		var string;
@@ -106,7 +106,7 @@ io.on('connection', function(socket) {
 			record[u] = record[u].split(",");
 			console.log("name: "+record[u][0]+" turn: "+record[u][1]);
 		}
-		//socket.emit('updated', content);	
+		socket.emit('pushRank', record);	
 		
 
 	} );

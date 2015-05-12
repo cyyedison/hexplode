@@ -50,5 +50,9 @@ socket.on('updated', function(content) {
 	console.log("HI");
 } );
 
+socket.on('pushRank', function(record) {
+	document.getElementById("ranking").innerHTML=record;
+} );
+
 joinGame();
 
