@@ -89,9 +89,10 @@ io.on('connection', function(socket) {
 		console.log(turn);
 		var fs = require("fs");
 		var content = fs.readFileSync("./public/db/rank.txt");	
-		var splitted = content.split("\n");
+		var content2 = JSON.stringify(content);
+		var splitted = content2.split("\n");
 		//socket.emit('updated', content);	
-		console.log("Contents: " + content);
+		console.log("Contents: " + content2);
 		console.log("Splitted: " + splitted[0]);
 		console.log("Splitted: " + splitted[1]);
 		console.log("Splitted: " + splitted[2]);
