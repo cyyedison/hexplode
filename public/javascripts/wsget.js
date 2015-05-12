@@ -13,14 +13,8 @@ function init() {
 	mapGenerate();
 }
 
-function arrayBuffer2String(buf, callback) {
-    var bb = new BlobBuilder();
-    bb.append(buf);
-    var f = new FileReader();
-    f.onload = function(e) {
-        callback(e.target.result)
-    }
-    f.readAsText(bb.getBlob());
+function getRank(){
+	socket.emit('getRank', {});
 }
 
 socket.on('hexagonClicked', function(hexId) {
@@ -53,6 +47,7 @@ socket.on('updated', function(content) {
 socket.on('pushRank', function(record) {
 	document.getElementById("ranking").innerHTML=record;
 } );
+
 
 joinGame();
 

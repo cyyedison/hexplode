@@ -25,6 +25,3 @@ function update(turn){
 	console.log("updating");
 }
 
-function getRank(){
-	socket.emit('getRank', {});
-}
