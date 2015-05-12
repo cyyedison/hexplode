@@ -89,7 +89,7 @@ io.on('connection', function(socket) {
 		console.log(turn);
 		socket.emit('updated', content);
 		var fs = require("fs");
-		var content = fs.readFileSync("/public/db/rank.txt");	
+		var content = fs.readFileSync("./public/db/rank.txt");	
 		socket.emit('updated', content);	
 		console.log("Contents: " + content);
 	} );
