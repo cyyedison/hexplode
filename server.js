@@ -103,8 +103,11 @@ io.on('connection', function(socket) {
 			splitted[u] = splitted[u].replace('[','');
 			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
 			console.log("Contents: " + splitted[u]);
-			/*splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii
-			for (var j=0;j<splitted2.length;j++){
+			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii
+			console.log("Contents: " + splitted2);
+			console.log("Contents: " + splitted2[0]);
+			console.log("Contents: " + splitted2[1]);
+			/*for (var j=0;j<splitted2.length;j++){
 				splitted3[j] = String.fromCharCode(splitted2[j]);
 				console.log("record["+(u+1)+"]: "+splitted3);
 			}*/
