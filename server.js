@@ -107,10 +107,10 @@ io.on('connection', function(socket) {
 			//console.log("Contents: " + splitted2);
 			//console.log("Contents: " + typeof (splitted2[0]));
 			//console.log("Contents: " + splitted2[1]);
-			for (var j=0;j<splitted2.length;j++){
-				splitted3[j] = String.fromCharCode(Number(splitted2[j]));
-				console.log("record["+(u+1)+"]: "+splitted3);
-			}
+			
+			splitted3 = String.fromCharCode.apply(this, splitted2);				
+			
+			console.log("record: "+splitted3);
 		}
 		//socket.emit('updated', content);	
 		
