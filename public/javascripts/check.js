@@ -158,7 +158,7 @@ function add(id){
 		}
 		else if(player==1){
 				document.getElementById("win").play();
-				if (difficulty==1 && ROW==3)
+				if (difficulty==2 && ROW==5)
 					update(turn);
 				alert('You win!');	
 			}
