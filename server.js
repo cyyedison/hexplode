@@ -90,12 +90,13 @@ io.on('connection', function(socket) {
 		var fs = require("fs");
 		var content = fs.readFileSync("./public/db/rank.txt");	
 		var content2 = JSON.stringify(content);
-		var splitted = content2.split("10");
-		//socket.emit('updated', content);	
+		var splitted = content2.split(",10,");
 		console.log("Contents: " + content2);
-		console.log("Splitted: " + splitted[0]);
-		console.log("Splitted: " + splitted[1]);
-		console.log("Splitted: " + splitted[2]);
+		for (var u=0; u < splitted.length ;u++)
+			console.log("Splitted[" +u+"]: "+splitted[u]);
+		//socket.emit('updated', content);	
+		
+
 	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
 		console.log('New user retrieve init information');
