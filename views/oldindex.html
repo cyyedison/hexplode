@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hexplode</title>
+		<link href="stylesheets/hexagon.css" rel="stylesheet" >
+	</head>
+
+	<body>
+
+		<font size="36">
+			<p style="display:inline; float:right;">
+				<span>Turn: </span><span id="currTurn"></span>
+				<span>Player </span><span id="currPlayer"></span>
+			</p>
+		</font>
+		<div class="noselect">
+
+			<!--first row, id is "row+column", p inside stores the current number and the max number, id is 'p'+id, max number is the no. of neighbour.-->
+			<div id="11" class="hexagon" style="position:absolute; top:8px; left:8px" onClick="hexClick(id)"><p id="p11" align="center">0/2</p></div>
+			<div id="12" class="hexagon" style="position:absolute; top:8px; left:114px" onClick="hexClick(id)"><p id="p12" align="center">0/4</p></div>
+			<div id="13" class="hexagon" style="position:absolute; top:8px; left:220px" onClick="hexClick(id)"><p id="p13" align="center">0/4</p></div>
+			<div id="14" class="hexagon" style="position:absolute; top:8px; left:326px" onClick="hexClick(id)"><p id="p14" align="center">0/3</p></div>
+
+			<!--second row-->
+			<div id="21" class="hexagon" style="position:absolute; top:100px; left:60px" onClick="hexClick(id)"><p id="p21" align="center">0/4</p></div>
+			<div id="22" class="hexagon" style="position:absolute; top:100px; left:166px" onClick="hexClick(id)"><p id="p22" align="center">0/6</p></div>
+			<div id="23" class="hexagon" style="position:absolute; top:100px; left:272px" onClick="hexClick(id)"><p id="p23" align="center">0/6</p></div>
+			<div id="24" class="hexagon" style="position:absolute; top:100px; left:378px" onClick="hexClick(id)"><p id="p24" align="center">0/4</p></div>
+
+			<!--3rd row-->
+			<div id="31" class="hexagon" style="position:absolute; top:192px; left:114px" onClick="hexClick(id)"><p id="p31" align="center">0/4</p></div>
+			<div id="32" class="hexagon" style="position:absolute; top:192px; left:220px" onClick="hexClick(id)"><p id="p32" align="center">0/6</p></div>
+			<div id="33" class="hexagon" style="position:absolute; top:192px; left:326px" onClick="hexClick(id)"><p id="p33" align="center">0/6</p></div>
+			<div id="34" class="hexagon" style="position:absolute; top:192px; left:432px" onClick="hexClick(id)"><p id="p34" align="center">0/4</p></div>
+
+			<!--4th row-->
+			<div id="41" class="hexagon" style="position:absolute; top:284px; left:166px" onClick="hexClick(id)"><p id="p41" align="center">0/3</p></div>
+			<div id="42" class="hexagon" style="position:absolute; top:284px; left:272px" onClick="hexClick(id)"><p id="p42" align="center">0/4</p></div>
+			<div id="43" class="hexagon" style="position:absolute; top:284px; left:378px" onClick="hexClick(id)"><p id="p43" align="center">0/4</p></div>
+			<div id="44" class="hexagon" style="position:absolute; top:284px; left:484px" onClick="hexClick(id)"><p id="p44" align="center">0/2</p></div>
+
+			<!--5th row
+			<div class="hexagon" style="position:absolute; top:376px; left:114px"></div>
+			<div class="hexagon" style="position:absolute; top:376px; left:220px"></div>
+			<div class="hexagon" style="position:absolute; top:376px; left:326px"></div>-->
+
+		</div>
+
+	</body>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="javascripts/wssend.js"></script>
+	<script src="javascripts/check.js"></script>
+	<script src="javascripts/wsget.js"></script>
+</html>

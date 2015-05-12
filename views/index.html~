@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hexplode</title>
+		
+		<style type="text/css">
+		body {
+			background-image: url(image/explosion2.jpg);
+			background-repeat: repeat;
+		}
+        </style>
+        <link href="/stylesheets/button_banner.css" rel="stylesheet">
+	</head>
+	
+	<body>
+    	<center>
+			<p class="banner blink" style="margin-top:-10px;">Welcome To Hexplode!</p>
+			<br />
+			<p style="color:blue; font-family:Courier New; font-size:58px; font-weight:bold;" id="instruction">Choose a mode:</p>
+			<div id="mode">
+				<div id="1" onClick="chooseMapSize(id)" class="myButton">Single Player</div>
+				<br /><br />
+				<div id="2" onClick="chooseMapSize(id)" class="myButton">Multiplayer</div>
+				<br /><br />
+				<a href="/help" class="myButton">Help</a>
+			</div>
+			<div id="mapMenu"></div>
+			<div id="playerMenu"></div>
+			<div id="diffMenu"></div>
+        </center>
+	</body>
+	<script type="text/javascript" src="javascripts/menu.js"></script>
+</html>

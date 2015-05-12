@@ -1,0 +1,14 @@
+var socket = io(window.location.hostname + ":8000");
+
+function hexClick(id) {
+	var playerId = localStorage.getItem('playerId');
+	if (playerId == currPlayer) {
+		socket.emit('hexagonClicked', id);
+	} else {
+		alert('Please be patient.');
+	}
+}
+
+function joinGame() {
+	socket.emit('getInitInfo', {});
+}

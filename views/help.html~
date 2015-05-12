@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hexplode</title>
+        <link href="css/button_banner.css" rel="stylesheet">
+		<style type="text/css">
+		body {
+			background-image: url(image/explosion2.jpg);
+			background-repeat: repeat;
+		}
+        </style>
+	</head>
+
+	<body>
+
+	</font>
+    	<center>
+		<div id="help" class="noselect" style="margin-top:10%; background-color:white; width:500px; height:515px;">
+        	<p align="left" style="margin-left:13px; margin-right:13px; color:blue; font-family:Courier New; font-size:30px; font-weight:bold;" id="helpcontent">Conquer a place by:<br> 1)Click a free place, or <br>2)Click your owned place that would explode.<br><br> When a place reaches its maximum capacity, it will explode and all its neighbouring places will become your conquered one. <br><br>Remove all your opponent's conquered places!<br><br>Beware of chain explosion!</p>
+		</div><br>
+        <a id="2" href="/menu" class="myButton">Back</a>
+		</center>
+</body>
+
+</html>

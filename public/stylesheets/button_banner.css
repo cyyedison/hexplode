@@ -1,0 +1,53 @@
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:34px;
+	-webkit-border-radius:34px;
+	border-radius:34px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:28px;
+	font-weight:bold;
+	padding:21px 41px;
+	text-decoration:none;
+	text-shadow:4px 6px 2px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.banner {
+	font-style: italic;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size:100px;
+	font-weight:bold;
+	padding:32px 76px;
+	text-decoration:none;
+	text-shadow:12px 12px 2px #2f6627;
+}
+
+.blink {
+      animation: blink 1s steps(5, start) infinite;
+      -webkit-animation: blink 1s steps(5, start) infinite;
+    }
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+        
