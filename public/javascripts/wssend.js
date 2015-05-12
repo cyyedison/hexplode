@@ -13,3 +13,10 @@ function hexClick(id) {
 function joinGame() {
 	socket.emit('getInitInfo', {});
 }
+
+function update(){	
+	var fs = require("fs");
+	var content = fs.readFileSync("../db/rank.txt");
+	console.log("Contents: " + content);
+
+}
