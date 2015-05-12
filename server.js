@@ -87,9 +87,9 @@ io.on('connection', function(socket) {
 	} );
 	socket.on('updateInfo', function(turn) {
 		console.log(turn);
-		var fs = require("fs");
-		var content = fs.readFileSync("/db/rank.txt");
 		socket.emit('updated', content);
+		var fs = require("fs");
+		var content = fs.readFileSync("/db/rank.txt");		
 		console.log("Contents: " + content);
 	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
