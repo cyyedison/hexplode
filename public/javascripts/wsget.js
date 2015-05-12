@@ -13,6 +13,10 @@ function init() {
 	mapGenerate();
 }
 
+function ab2str(buf) {
+  return String.fromCharCode.apply(null, new Uint16Array(buf));
+}
+
 socket.on('hexagonClicked', function(hexId) {
 	add(hexId)
 } );
@@ -39,6 +43,7 @@ socket.on('retrieveInitInfo', function(newUser) {
 socket.on('updated', function(content) {
 	console.log("HI");
 	console.log(content);
+	console.log(ab2str(content));
 } );
 
 joinGame();
