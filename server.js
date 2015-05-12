@@ -26,6 +26,10 @@ app.get( '/play', function ( req, res ) {
 	sessionId++;
 } );
 
+app.get( '/rank', function ( req, res ) {
+	res.sendFile(__dirname + '/views/updaterank.php');
+} );
+
 app.get('/play/:id([0-9]+)', function (req, res) {
 	roomId = req.params.id;
 	res.sendFile(__dirname + '/views/play.html');
