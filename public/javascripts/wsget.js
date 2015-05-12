@@ -45,7 +45,12 @@ socket.on('updated', function(content) {
 } );
 
 socket.on('pushRank', function(record) {
-	document.getElementById("ranking").innerHTML=record;
+	for (var y=0;y<10;y++){
+		document.getElementById("ranking").innerHTML+=(y+1);
+		document.getElementById("ranking").innerHTML+=": ";
+		document.getElementById("ranking").innerHTML+=record[y];
+		document.getElementById("ranking").innerHTML+="<br>";
+	}
 } );
 
 
