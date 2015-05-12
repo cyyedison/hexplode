@@ -98,7 +98,7 @@ io.on('connection', function(socket) {
 		var splitted3;
 		var splitted4;
 		var record;
-		for (var u=0; u < splitted.length ;u++){
+		/*for (var u=0; u < splitted.length ;u++){
 			//console.log("Splitted[" +u+"]: "+splitted[u]);
 			splitted[u] = splitted[u].replace('[','');
 			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
@@ -107,7 +107,7 @@ io.on('connection', function(socket) {
 				splitted3[j] = String.fromCharCode(splitted2[j]);
 				console.log("record["+(u+1)+"]: "+splitted3);
 			}
-		}
+		}*/
 		//socket.emit('updated', content);	
 		
 
