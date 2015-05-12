@@ -21,7 +21,7 @@ function joinGame() {
 }
 
 function update(turn){	
-	socket.emit('updateInfo', turn);
-	console.log("updating");
+	socket.emit('updateRank', turn);
+	//console.log("updating");
 }
 

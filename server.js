@@ -110,6 +110,45 @@ io.on('connection', function(socket) {
 		
 
 	} );
+	socket.on('updateRank', function(turn) {
+		//console.log(turn);
+		var fs = require("fs");
+		var content = fs.readFileSync(__dirname + '/public/db/rank.txt');	
+		var content2 = JSON.stringify(content);
+		var splitted = content2.split(",10,");//splitted is array of all record, e.g. alice, 100, in ascii
+		//console.log("Contents: " + content2);
+		var splitted2;
+		var record=[];
+		var string;
+		var d;
+		for (var u=0; u < splitted.length ;u++){
+			splitted[u] = splitted[u].replace('[','');
+			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
+			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii			
+			string = String.fromCharCode.apply(this, splitted2);
+			record[u] = string;
+			record[u] = record[u].split(",");
+			//console.log("name: "+record[u][0]+" turn: "+record[u][1]);
+		}
+		for (d=9;d>=1;d--){
+			if (turn <= record[d][1]){
+				if (d==9)
+					continue;
+				record[d-1]=record[d];
+			}
+			else break;
+		}
+		if (d+1<=9){
+			record[d+1][1]=turn;
+			socket.emit('requestName', {});
+			socket.on('gotName', function(name) {
+				record[d+1][0]=name;
+			});
+		}
+		console.log("record: "+record);
+		
+
+	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
 		console.log('New user retrieve init information');
 		io.to(newUser['id']).emit('getInitInfo', {'NoOfPlayer' : newUser['NoOfPlayer'], 'mapSize' : newUser['mapSize'], 'playerId' : newUser['playerId']});

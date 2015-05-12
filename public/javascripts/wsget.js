@@ -17,6 +17,13 @@ function getRank(){
 	socket.emit('getRank', {});
 }
 
+socket.on('requestName', function() {
+	var name = prompt("Please enter your name", "");
+	while (name==null)
+		name = prompt("Please enter your name", "");
+	socket.emit('gotName', name);
+} );
+
 socket.on('hexagonClicked', function(hexId) {
 	add(hexId)
 } );
