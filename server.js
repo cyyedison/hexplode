@@ -111,6 +111,7 @@ io.on('connection', function(socket) {
 
 	} );
 	socket.on('updateRank', function(turn) {
+		console.log("updateRank");
 		//console.log(turn);
 		var fs = require("fs");
 		var content = fs.readFileSync(__dirname + '/public/db/rank.txt');	
