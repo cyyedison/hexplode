@@ -147,7 +147,7 @@ io.on('connection', function(socket) {
 			socket.on('gotName', function(name) {
 				record[d+1][0]=name;
 				console.log("record: "+record);
-				fs.writeFile(__dirname + '/public/db/rank.txt', record, function (err) {
+				fs.writeFile(__dirname + '/public/db/rank.txt', record[0]+'\n'+record[1]+'\n'+record[2]+'\n'+record[3]+'\n'+record[4]+'\n'+record[5]+'\n'+record[6]+'\n'+record[7]+'\n'+record[8]+'\n'+record[9], function (err) {
   					if (err) throw err;
   					console.log('It\'s saved!');
 				});
