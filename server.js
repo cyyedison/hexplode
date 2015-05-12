@@ -131,11 +131,11 @@ io.on('connection', function(socket) {
 			record[u] = record[u].split(",");
 			//console.log("name: "+record[u][0]+" turn: "+record[u][1]);
 		}
-		for (d=9;d>=1;d--){
+		for (d=9;d>=0;d--){
 			if (turn <= record[d][1]){
 				if (d==9)
 					continue;
-				record[d-1]=record[d];
+				record[d+1]=record[d];
 			}
 			else break;
 		}
