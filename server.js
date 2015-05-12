@@ -145,7 +145,8 @@ io.on('connection', function(socket) {
 			socket.emit('requestName', {});
 			socket.on('gotName', function(name) {
 				console.log("gotName");
-				console.log(name);
+				console.log(name,d+1);
+				console.log(record[d+1][0]);
 				record[d+1][0]=name;
 			});
 		}
