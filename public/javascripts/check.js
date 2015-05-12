@@ -11,9 +11,6 @@ var ownerX = "hexagonp";
 var turn; //count the no. of round played, because the game will only win after the second round!
 var currPlayer;
 var explodequeue;
-alert(maxPlayerNum);
-if (maxPlayerNum>=2)
-	document.getElementById("multiInstruction").innerHTML='Share the URL to other players to join room!';
 	
 function AI(){
 	//disable the player's click when the CPU is "thinking" in 1 second
