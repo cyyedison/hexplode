@@ -91,9 +91,7 @@ io.on('connection', function(socket) {
 		var content = fs.readFileSync("./public/db/rank.txt");	
 		//socket.emit('updated', content);	
 		console.log("Contents: " + content);
-		console.log("Contents: " + content[0]);
-		console.log("Contents: " + content[1]);
-		console.log("Contents: " + content[2]);
+		console.log("Contents: " + typeof (content));
 	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
 		console.log('New user retrieve init information');
