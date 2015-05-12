@@ -7,7 +7,9 @@
 
 <body>
 <?php
-echo readfile("/db/rank.txt");
+$myfile = fopen("/db/rank.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("/db/rank.txt"));
+fclose($myfile);
 ?>
 </body>
 </html>

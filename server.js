@@ -27,7 +27,7 @@ app.get( '/play', function ( req, res ) {
 } );
 
 app.get( '/rank', function ( req, res ) {
-	res.sendFile(__dirname + '/views/updaterank.html');
+	res.sendFile(__dirname + '/views/updaterank.php');
 } );
 
 app.get('/play/:id([0-9]+)', function (req, res) {
