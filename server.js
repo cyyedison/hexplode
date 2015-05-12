@@ -135,7 +135,8 @@ io.on('connection', function(socket) {
 			if (turn <= record[d][1]){
 				if (d==9)
 					continue;
-				record[d+1]=record[d];
+				record[d+1][0]=record[d][0];
+				record[d+1][1]=record[d][1];
 			}
 			else break;
 		}
