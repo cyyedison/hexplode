@@ -95,22 +95,14 @@ io.on('connection', function(socket) {
 		var splitted = content2.split(",10,");//splitted is array of all record, e.g. alice, 100, in ascii
 		console.log("Contents: " + content2);
 		var splitted2;
-		var splitted3;
-		//var splitted4;
 		var record;
 		for (var u=0; u < splitted.length ;u++){
-			//console.log("Splitted[" +u+"]: "+splitted[u]);
 			splitted[u] = splitted[u].replace('[','');
 			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
-			console.log("Contents: " + splitted[u]);
-			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii
-			//console.log("Contents: " + splitted2);
-			//console.log("Contents: " + typeof (splitted2[0]));
-			//console.log("Contents: " + splitted2[1]);
-			
-			splitted3 = String.fromCharCode.apply(this, splitted2);				
-			
-			console.log("record: "+splitted3);
+			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii			
+			record[u] = String.fromCharCode.apply(this, splitted2);
+			record[u] = record[u].split(",");
+			console.log("name: "+record[u][0]+"turn: "+record[u][1]);
 		}
 		//socket.emit('updated', content);	
 		
