@@ -95,12 +95,13 @@ io.on('connection', function(socket) {
 		var splitted = content2.split(",10,");//splitted is array of all record, e.g. alice, 100, in ascii
 		console.log("Contents: " + content2);
 		var splitted2;
-		var record;
+		var string;
 		for (var u=0; u < splitted.length ;u++){
 			splitted[u] = splitted[u].replace('[','');
 			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
 			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii			
-			record[u] = String.fromCharCode.apply(this, splitted2);
+			string = String.fromCharCode.apply(this, splitted2);
+			record[u] = string;
 			record[u] = record[u].split(",");
 			console.log("name: "+record[u][0]+"turn: "+record[u][1]);
 		}
