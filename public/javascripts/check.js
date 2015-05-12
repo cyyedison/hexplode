@@ -115,13 +115,6 @@ function eliminate(player){
 function add(id){
 	var player = parseInt(document.getElementById("currPlayer").textContent);
 	var playerClass = ownerX + player;
-	var currHexOwner = document.getElementById(id).className;
-	
-	//this is for disabling the current player choosing the other player's place
-	if ((currHexOwner != noOwner) && (currHexOwner != playerClass)) {
-		alert("You can't select other player's place!");
-		return 0;
-	}
 	
 	var number;
 	number = document.getElementById('p'+id); //get the obj of the number inside the hexagon, like 0/2
@@ -172,7 +165,7 @@ function add(id){
 				document.getElementById("lose").play();
 				alert('You lose!');				
 			}
-		//window.location = "/menu";
+		window.location = "/menu";
 	}
 	else if(exploded)
 		document.getElementById("explosion").play();
