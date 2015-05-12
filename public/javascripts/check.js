@@ -165,7 +165,7 @@ function add(id){
 		}
 		else if(player==1){
 				document.getElementById("win").play();
-				update();
+				update(turn);
 				alert('You win!');	
 			}
 			else{
