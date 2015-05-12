@@ -36,9 +36,10 @@ socket.on('retrieveInitInfo', function(newUser) {
 	socket.emit('retrieveInitInfo', newUser);
 } );
 
-joinGame();
-
 socket.on('updated', function(content) {
 	console.log("HI");
 	console.log(content);
 } );
+
+joinGame();
+
