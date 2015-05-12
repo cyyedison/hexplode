@@ -87,11 +87,13 @@ io.on('connection', function(socket) {
 	} );
 	socket.on('updateInfo', function(turn) {
 		console.log(turn);
-		socket.emit('updated', content);
 		var fs = require("fs");
 		var content = fs.readFileSync("./public/db/rank.txt");	
-		socket.emit('updated', content);	
+		//socket.emit('updated', content);	
 		console.log("Contents: " + content);
+		console.log("Contents: " + content[0]);
+		console.log("Contents: " + content[1]);
+		console.log("Contents: " + content[2]);
 	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
 		console.log('New user retrieve init information');
