@@ -1,3 +1,10 @@
 alice,99
 bob,100
+calvin,10
+daemon,10
+eason,99
+friend,99
+gerrard,52
+haha,22
+ice,68
 pepter,10
