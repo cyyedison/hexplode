@@ -13,8 +13,14 @@ function init() {
 	mapGenerate();
 }
 
-function ab2str(buf) {
-  return String.fromCharCode.apply(null, new Uint16Array(buf));
+function arrayBuffer2String(buf, callback) {
+    var bb = new BlobBuilder();
+    bb.append(buf);
+    var f = new FileReader();
+    f.onload = function(e) {
+        callback(e.target.result)
+    }
+    f.readAsText(bb.getBlob());
 }
 
 socket.on('hexagonClicked', function(hexId) {
@@ -43,7 +49,7 @@ socket.on('retrieveInitInfo', function(newUser) {
 socket.on('updated', function(content) {
 	console.log("HI");
 	console.log(content);
-	console.log(ab2str(content));
+	console.log(arrayBuffer2String(content));
 } );
 
 joinGame();
