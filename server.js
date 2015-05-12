@@ -122,7 +122,6 @@ io.on('connection', function(socket) {
 		var record=[];
 		var string;
 		var d;
-		var name2;
 		for (var u=0; u < splitted.length ;u++){
 			splitted[u] = splitted[u].replace('[','');
 			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
@@ -146,14 +145,12 @@ io.on('connection', function(socket) {
 			record[d+1][1]=turn;
 			socket.emit('requestName', {});
 			socket.on('gotName', function(name) {
-				console.log("gotName");
-				console.log(name,d+1);
-				console.log(record[d+1][0]);
-				name2=name;
+				record[d+1][0]=name;
+				console.log("record: "+record);
 			});
-			record[d+1][0]=name2;
+			
 		}
-		console.log("record: "+record);
+		//console.log("record: "+record);
 		
 
 	} );
