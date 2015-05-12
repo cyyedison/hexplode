@@ -90,7 +90,7 @@ io.on('connection', function(socket) {
 		var fs = require("fs");
 		var content = fs.readFileSync("./public/db/rank.txt");	
 		var content2 = JSON.stringify(content);
-		var splitted = content2.split("\n");
+		var splitted = content2.split("10");
 		//socket.emit('updated', content);	
 		console.log("Contents: " + content2);
 		console.log("Splitted: " + splitted[0]);
