@@ -12,6 +12,9 @@ var turn; //count the no. of round played, because the game will only win after 
 var currPlayer;
 var explodequeue;
 
+if (maxPlayerNum>=2)
+	document.getElementById("multiInstruction").innerHTML='Share the URL to other players to join room!';
+	
 function AI(){
 	//disable the player's click when the CPU is "thinking" in 1 second
 	for (var n=1;n< document.getElementsByTagName("div").length;n++)

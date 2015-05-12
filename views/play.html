@@ -17,9 +17,10 @@
 		<audio id="explosion" src="/sound/explosion.mp3" preload="auto"></audio>
 		<audio id="win" src="/sound/win.mp3" preload="auto"></audio>
 		<audio id="lose" src="/sound/lose.mp3" preload="auto"></audio>
-
+		<b><p style="color:white;display: block; float:left; margin-left:30px; font-size:30px;" id="multiInstruction"></p></b>
 		<font size="36">
 			<b>
+            	
 				<p style="color:white; display: block; float:right; margin-right:30px;">
 					<span>Turn: </span><span id="currTurn"></span>,
 					<span>Player </span><span id="currPlayer"></span>
@@ -29,7 +30,7 @@
 		</font>
 		<div id="map" class="noselect">
 		</div>
-
+        
 	</body>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="/javascripts/wssend.js"></script>
