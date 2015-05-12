@@ -166,7 +166,7 @@ function add(id){
 		else if(player==1){
 				document.getElementById("win").play();
 				alert('You win!');	
-				window.location = "/rank";			
+				window.location = (__dirname + '/views/updaterank.php')		;
 			}
 			else{
 				document.getElementById("lose").play();
