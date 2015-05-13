@@ -165,7 +165,7 @@ function add(id){
 		} else {
 			document.getElementById("lose").play();
 			alert('You lose!');				
-			window.location = "/menu";
+			//window.location = "/menu";
 		}
 		var menuButton = document.getElementById('menuButton');
 		menuButton.style.display = "block";
