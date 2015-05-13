@@ -156,17 +156,18 @@ function add(id){
 			document.getElementById("win").play();
 			alert('Player ' + player + ' win!'); //show which player win and refresh the page to play again.
 		}
-		else if(player==1){
-				document.getElementById("win").play();
-				if (difficulty==2 && ROW==5)
-					update(turn);
-				alert('You win!');	
+		else if(player==1) {
+			document.getElementById("win").play();
+			if (difficulty==2 && ROW==5) {
+				update(turn);
 			}
-			else{
-				document.getElementById("lose").play();
-				alert('You lose!');				
-			}
-		window.location = "/menu";
+		} else {
+			document.getElementById("lose").play();
+			alert('You lose!');				
+			window.location = "/menu";
+		}
+		var menuButton = document.getElementById('menuButton');
+		menuButton.style.display = "block";
 	}
 	else if(exploded)
 		document.getElementById("explosion").play();

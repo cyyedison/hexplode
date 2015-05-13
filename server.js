@@ -90,73 +90,43 @@ io.on('connection', function(socket) {
 	socket.on('getRank', function() {
 		//console.log(turn);
 		var fs = require("fs");
-		var content = fs.readFileSync(__dirname + '/public/db/rank.txt');	
-		var content2 = JSON.stringify(content);
-		var splitted = content2.split(",10,");//splitted is array of all record, e.g. alice, 100, in ascii
-		//console.log("Contents: " + content2);
-		var splitted2;
-		var record=[];
-		var string;
-		for (var u=0; u < splitted.length ;u++){
-			splitted[u] = splitted[u].replace('[','');
-			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
-			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii			
-			string = String.fromCharCode.apply(this, splitted2);
-			record[u] = string;
-			record[u] = record[u].split(",");
-			console.log("name: "+record[u][0]+" turn: "+record[u][1]);
-		}
+		var rawContent = fs.readFileSync(__dirname + '/public/db/rankData.json');	
+		var record = JSON.parse(rawContent);
 		socket.emit('pushRank', record);	
-		
-
 	} );
 	socket.on('updateRank', function(turn) {
 		//console.log("updateRank");
 		//console.log(turn);
 		var fs = require("fs");
-		var content = fs.readFileSync(__dirname + '/public/db/rank.txt');	
-		var content2 = JSON.stringify(content);
-		var splitted = content2.split(",10,");//splitted is array of all record, e.g. alice, 100, in ascii
-		//console.log("Contents: " + content2);
-		var splitted2;
-		var record=[];
-		var string;
-		var d;
-		for (var u=0; u < splitted.length ;u++){
-			splitted[u] = splitted[u].replace('[','');
-			splitted[u] = splitted[u].replace(']','');//remove the head and tail [ and ]
-			splitted2 = splitted[u].split(","); //splitted2 is one single record, e.g. alice, 100, in ascii			
-			string = String.fromCharCode.apply(this, splitted2);
-			record[u] = string;
-			record[u] = record[u].split(",");
-			//console.log("name: "+record[u][0]+" turn: "+record[u][1]);
-		}
-		for (d=9;d>=0;d--){
-			if (turn <= record[d][1]){
-				if (d==9)
-					continue;
-				record[d+1][0]=record[d][0];
-				record[d+1][1]=record[d][1];
+		var rawContent = fs.readFileSync(__dirname + '/public/db/rankData.json');	
+		var record = JSON.parse(rawContent);
+		var rank = -1;
+		for (var recRank = 10; recRank >= 1; recRank--) {
+			if (turn > record.turn[recRank - 1]) {
+				rank = recRank + 1;
+				break;
 			}
-			else break;
 		}
-		if (d+1<=9){
+		if ((recRank == 0) && (rank == -1)) {
+			rank = 1;
+		}
+		if (rank <= 10) {
 			//console.log("You are in ranking!");
-			record[d+1][1]=turn;
 			socket.emit('requestName', {});
-			socket.on('gotName', function(name) {
-				record[d+1][0]=name;
-				//console.log("record: "+record);
-				fs.writeFile(__dirname + '/public/db/rank.txt', record[0]+'\n'+record[1]+'\n'+record[2]+'\n'+record[3]+'\n'+record[4]+'\n'+record[5]+'\n'+record[6]+'\n'+record[7]+'\n'+record[8]+'\n'+record[9], function (err) {
-  					if (err) throw err;
-  					console.log('It\'s saved!');
-				});
-			});
-			
 		}
+		socket.on('gotName', function(name) {
+			record.name.splice(rank - 1, 0, name);
+			record.name.pop();
+			record.turn.splice(rank - 1, 0, turn);
+			record.turn.pop();
+			//console.log("record: "+record);
+			fs.writeFile(__dirname + '/public/db/rankData.json', JSON.stringify(record), function (err) {
+				if (err) throw err;
+				console.log("It's saved!");
+			} );
+		} );
+		socket.emit('continue', null);
 		//console.log("record: "+record);
-		
-
 	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
 		console.log('New user retrieve init information');

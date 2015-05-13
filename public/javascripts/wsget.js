@@ -17,6 +17,10 @@ function getRank(){
 	socket.emit('getRank', {});
 }
 
+socket.on('continue', function() {
+	alert('You win!');
+} );
+
 socket.on('requestName', function() {
 	//console.log("gettingName");
 	var name = prompt("Please enter your name", "");
@@ -56,7 +60,9 @@ socket.on('pushRank', function(record) {
 	for (var y=0;y<10;y++){
 		document.getElementById("ranking").innerHTML+=(y+1);
 		document.getElementById("ranking").innerHTML+=": ";
-		document.getElementById("ranking").innerHTML+=record[y];
+		document.getElementById("ranking").innerHTML+=record['name'][y];
+		document.getElementById("ranking").innerHTML+="\t";
+		document.getElementById("ranking").innerHTML+=record['turn'][y];
 		document.getElementById("ranking").innerHTML+="<br>";
 	}
 } );
