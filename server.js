@@ -125,7 +125,7 @@ io.on('connection', function(socket) {
 				console.log("It's saved!");
 			} );
 		} );
-		socket.emit('continue', null);
+		//socket.emit('continue', null);
 		//console.log("record: "+record);
 	} );
 	socket.on( 'retrieveInitInfo', function(newUser) {
