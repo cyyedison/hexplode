@@ -157,11 +157,11 @@ function add(id){
 			alert('Player ' + player + ' win!'); //show which player win and refresh the page to play again.
 		}
 		else if(player==1) {
-			document.getElementById("win").play();
-			alert('You win!');		
+			document.getElementById("win").play();			
 			if (difficulty==2 && ROW==5) {
 				update(turn);
 			}
+			alert('You win!');		
 		} else {
 			document.getElementById("lose").play();
 			alert('You lose!');				
