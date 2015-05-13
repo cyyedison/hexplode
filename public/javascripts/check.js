@@ -164,8 +164,8 @@ function add(id){
 			alert('You win!');		
 		} else {
 			document.getElementById("lose").play();
-			alert('You lose!');				
-			//window.location = "/menu";
+			alert('You lose!');	
+				
 		}
 		var menuButton = document.getElementById('menuButton');
 		menuButton.style.display = "block";
