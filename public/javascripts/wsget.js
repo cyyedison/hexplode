@@ -1,5 +1,7 @@
 function init() {
 	//console.log('Init Game');
+	ROW = mapSize;
+	COLUMN = mapSize;
 	turn = 1;
 	currPlayer = 1;
 	explodequeue = [];

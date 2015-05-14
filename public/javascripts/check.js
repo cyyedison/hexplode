@@ -4,8 +4,8 @@ String.prototype.replaceAt=function(index, character) { //self-defined function 
 var maxPlayerNum;
 var difficulty = localStorage.getItem("difficulty");
 var singlePlayer = false;
-var ROW = localStorage.getItem("mapSize");
-var COLUMN = localStorage.getItem("mapSize");
+var ROW;
+var COLUMN;
 var noOwner = "hexagon";
 var ownerX = "hexagonp";
 var turn; //count the no. of round played, because the game will only win after the second round!
